@@ -26,6 +26,9 @@ class UserFetcher: ObservableObject {
         
         let task = URLSession.shared.dataTask(with: url) {[unowned self] (data, response, error) in
             
+            if let response = response as? HTTPURLResponse, !(200...299).contains(response.statusCode) {
+                // TODO - error
+            }
             
             DispatchQueue.main.async {
                 self.isLoading = false
