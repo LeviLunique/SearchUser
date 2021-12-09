@@ -20,38 +20,21 @@ class UserFetcher: ObservableObject {
     func fetchAllUsers () {
         
         isLoading = true
+        errorMessage = nil
+        let service = APIService()
         
-        //TODO: show error if cannot create url
-        let url = URL(string: "https://jsonplaceholder.typicode.com/users")!
-        
-        let task = URLSession.shared.dataTask(with: url) {[unowned self] (data, response, error) in
-            
-            if let response = response as? HTTPURLResponse, !(200...299).contains(response.statusCode) {
-                // TODO - error
-            }
-            
-            DispatchQueue.main.async {
-                self.isLoading = false
-            }
-            let decoder = JSONDecoder()
-            
-            if let data = data {
-                
-                do {
-                    let users = try decoder.decode([User].self, from: data)
-                    
-                    DispatchQueue.main.async {
-                        self.users = users
-                    }
-                    
-                } catch {
-                    //TODO: show error
-                    print (error)
-                }
+        let url = URL(string: "")
+        service.fetchUsers(url: url) { [unowned self] result in
+            self.isLoading = false
+            switch result {
+            case .failure(let error):
+                self.errorMessage = error.localizedDescription
+                // print(error.description)
+                print(error)
+            case .success(let users):
+                self.users = users
             }
         }
-        
-        task.resume()
     }
-    
+
 }

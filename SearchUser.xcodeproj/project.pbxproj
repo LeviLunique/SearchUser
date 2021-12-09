@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1549404827602A8100972E29 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1549404727602A8100972E29 /* APIError.swift */; };
+		158DCA7927617FA900B9307D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DCA7827617FA900B9307D /* APIService.swift */; };
 		15D19D47275EE4F500DA2802 /* UserFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D19D46275EE4F400DA2802 /* UserFetcher.swift */; };
 		15D19D4B275EEB8400DA2802 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D19D4A275EEB8400DA2802 /* UserListView.swift */; };
 		15D19D4D275EEBDC00DA2802 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D19D4C275EEBDC00DA2802 /* ErrorView.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		1549404727602A8100972E29 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		158DCA7827617FA900B9307D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		15D19D46275EE4F400DA2802 /* UserFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFetcher.swift; sourceTree = "<group>"; };
 		15D19D4A275EEB8400DA2802 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		15D19D4C275EEBDC00DA2802 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				15D19D46275EE4F400DA2802 /* UserFetcher.swift */,
 				1549404727602A8100972E29 /* APIError.swift */,
+				158DCA7827617FA900B9307D /* APIService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				15E44FD627584DDA0088C5C7 /* SearchUserApp.swift in Sources */,
 				1549404827602A8100972E29 /* APIError.swift in Sources */,
 				15D19D4F275EEBF700DA2802 /* LoadingView.swift in Sources */,
+				158DCA7927617FA900B9307D /* APIService.swift in Sources */,
 				15E45003275850A10088C5C7 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
