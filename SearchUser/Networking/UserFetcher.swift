@@ -21,19 +21,23 @@ class UserFetcher: ObservableObject {
         
         isLoading = true
         errorMessage = nil
-        let service = APIService()
         
-        let url = URL(string: "")
+        let service = APIService()
+        let url = URL(string: "https://jsonplaceholder.typicode.com/users")
         service.fetchUsers(url: url) { [unowned self] result in
-            self.isLoading = false
-            switch result {
-            case .failure(let error):
-                self.errorMessage = error.localizedDescription
-                // print(error.description)
-                print(error)
-            case .success(let users):
-                self.users = users
+            
+            DispatchQueue.main.async {
+                self.isLoading = false
+                switch result {
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                    // print(error.description)
+                    print(error)
+                case .success(let users):
+                    self.users = users
+                }
             }
+            
         }
     }
 
