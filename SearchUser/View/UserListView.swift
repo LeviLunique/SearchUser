@@ -9,10 +9,21 @@ import SwiftUI
 
 struct UserListView: View {
     let users: [User]
+    
+    @State private var searchText: String = ""
+    
+    var filteredUsers: [User] {
+        if searchText.count == 0 {
+            return users
+        } else {
+            return users.filter { $0.name.contains(searchText)}
+        }
+    }
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(users) { user in
+                ForEach(filteredUsers) { user in
                     NavigationLink {
                         UserDetailView(user: user)
                     } label: {
@@ -24,6 +35,7 @@ struct UserListView: View {
         }
         .listStyle(PlainListStyle())
         .navigationTitle("Agenda CFO")
+        .searchable(text: $searchText)
     }
 }
 
