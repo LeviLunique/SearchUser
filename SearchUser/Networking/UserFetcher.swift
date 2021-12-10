@@ -40,5 +40,19 @@ class UserFetcher: ObservableObject {
             
         }
     }
+    
+    // MARK: preview helpers
+    
+    static func errorState() -> UserFetcher {
+        let fetcher = UserFetcher()
+        fetcher.errorMessage = APIError.url(URLError.init(.notConnectedToInternet)).localizedDescription
+        return fetcher
+    }
+    
+    static func successState() -> UserFetcher {
+        let fetcher = UserFetcher()
+        fetcher.users = [User.example1()]
+        return fetcher
+    }
 
 }
