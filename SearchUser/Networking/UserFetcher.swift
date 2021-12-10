@@ -13,7 +13,10 @@ class UserFetcher: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     
-    init () {
+    let service: APIServiceProtocol
+    
+    init (service: APIServiceProtocol = APIService()) {
+        self.service = service
         fetchAllUsers()
     }
     
@@ -22,7 +25,7 @@ class UserFetcher: ObservableObject {
         isLoading = true
         errorMessage = nil
         
-        let service = APIService()
+        
         let url = URL(string: "https://jsonplaceholder.typicode.com/users")
         service.fetchUsers(url: url) { [unowned self] result in
             
