@@ -32,10 +32,13 @@ struct UserListView: View {
                     
                 }
             }
+            .listStyle(PlainListStyle())
+            .navigationTitle("Agenda CFO")
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+            
         }
-        .listStyle(PlainListStyle())
-        .navigationTitle("Agenda CFO")
-        .searchable(text: $searchText)
+        
+        
     }
 }
 

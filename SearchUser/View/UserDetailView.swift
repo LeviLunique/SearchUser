@@ -10,7 +10,16 @@ import SwiftUI
 struct UserDetailView: View {
     let user: User
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            VStack (alignment: .leading, spacing: 5) {
+                Text(user.name)
+                    .font(.headline)
+                Text(user.username)
+                Text(user.email)
+                Text(user.phone)
+                    
+            }
+        }
     }
 }
 

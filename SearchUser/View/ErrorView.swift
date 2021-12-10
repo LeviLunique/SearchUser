@@ -17,6 +17,12 @@ struct ErrorView: View {
             
             Text(userFetcher.errorMessage ?? "")
             
+            Button {
+                userFetcher.fetchAllUsers()
+            } label: {
+                Text("Try again")
+            }
+            
         }
     }
 }
