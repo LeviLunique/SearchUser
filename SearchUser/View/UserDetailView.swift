@@ -10,14 +10,32 @@ import SwiftUI
 struct UserDetailView: View {
     let user: User
     var body: some View {
-        HStack {
-            VStack (alignment: .leading, spacing: 5) {
-                Text(user.name)
-                    .font(.headline)
-                Text(user.username)
-                Text(user.email)
-                Text(user.phone)
-                    
+        VStack {
+            Text(user.name)
+                .font(.title)
+                .fontWeight(.medium)
+            Form {
+                HStack {
+                    Text("Username")
+                    Spacer()
+                    Text(user.username)
+                        .foregroundColor(.gray)
+                        .font(.callout)
+                }
+                HStack {
+                    Text("Phone")
+                    Spacer()
+                    Text(user.phone)
+                        .foregroundColor(.gray)
+                        .font(.callout)
+                }
+                HStack {
+                    Text("Email")
+                    Spacer()
+                    Text(user.email)
+                        .foregroundColor(.gray)
+                        .font(.callout)
+                }
             }
         }
     }

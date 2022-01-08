@@ -11,6 +11,7 @@ struct UserListView: View {
     let users: [User]
     
     @State private var searchText: String = ""
+    @State private var isEditing = false
     
     var filteredUsers: [User] {
         if searchText.count == 0 {

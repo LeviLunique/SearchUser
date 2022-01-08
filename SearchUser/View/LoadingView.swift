@@ -8,10 +8,16 @@
 import SwiftUI
 
 struct LoadingView: View {
+    
     var body: some View {
-        VStack {
-            Text("🤔").font(.system(size: 40))
+        VStack(spacing: 100) {
+            Image("logo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 200, height: 200)
+            
             ProgressView()
+           
         }
         
     }
