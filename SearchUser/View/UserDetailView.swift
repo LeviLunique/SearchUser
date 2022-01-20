@@ -25,9 +25,28 @@ struct UserDetailView: View {
                 HStack {
                     Text("Phone")
                     Spacer()
-                    Text(user.phone)
-                        .foregroundColor(.gray)
-                        .font(.callout)
+                    
+                    
+                    Button(action: {
+                        let phoneNumber = user.phone
+                        let tel = "tel://"
+                        let cleanString =
+                        phoneNumber.filter("0123456789.".contains)
+                        
+                        var formattedString = tel + cleanString
+                        print(formattedString)
+                        
+                        guard let url = URL(string: formattedString) else { return }
+                        UIApplication.shared.open(url)
+                        
+                        
+                        
+                    }) {
+                        Text(user.phone)
+                            .foregroundColor(.blue)
+                            .font(.callout)
+                    }
+                    
                 }
                 HStack {
                     Text("Email")

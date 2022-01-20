@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UserRow: View {
     let user: User
+    
     var body: some View {
         HStack {
             VStack (alignment: .leading, spacing: 5) {
