@@ -34,7 +34,7 @@ struct UserListView: View {
                 }
             }
             .listStyle(PlainListStyle())
-            .navigationTitle("Agenda CFO")
+            .navigationTitle("Search User")
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
             
         }
